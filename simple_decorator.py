@@ -3,7 +3,7 @@ from datetime import datetime
 
 def first_dec(func):
     def quiet_at_night():
-        if 7 <= datetime.now().hour < 22:
+        if 6 <= datetime.now().hour < 23:
             func()
         else:
             pass
