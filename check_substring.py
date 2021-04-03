@@ -1,16 +1,14 @@
-def chck_substr():
-    x = 'all is well'
-    sub_str = 'is'
-    temp = ''
-    for i in x:
-        for j in sub_str:
-            if j == i:
-                temp = temp + j
-    if temp == sub_str:
-        print('true')
+def count_substring(string, sub_string):
+    count = 0
+    i = string.find(sub_string)
+    while i != -1:
+        count += 1
+        i = string.find(sub_string, i+1)
+    return count
 
-    else:
-        print('false')
+if __name__ == '__main__':
+    string =input()
+    sub_string =input()
 
-
-chck_substr()
+    count = count_substring(string, sub_string)
+    print(count)
