@@ -1,14 +1,14 @@
-def parent(num):
-    def first_child():
-        print("Hi, I am Emma")
+from datetime import datetime
 
-    def second_child():
-        print("Call me Liam")
 
-    if num == 1:
-        return first_child
-    else:
-        return second_child
-if __name__ == '__main__':
+def first_dec(func):
+    def quiet_at_night():
+        if 7 <= datetime.now().hour < 22:
+            func()
+        else:
+            pass
+    quiet_at_night()
 
-    parent(1)
+@first_dec
+def passing_as_func():
+    print('wake up')

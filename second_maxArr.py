@@ -1,16 +1,13 @@
-def maxV_array():
+if __name__ == '__main__':
+    n = int(input())
+    arr = map(int, input().split())
+
+    x= list(set(arr))
+    for item in x:
+        for j in range(1,len(x)):
+            if x[j] <= x[j-1]:
+                x[j-1],x[j]=x[j],x[j-1]
 
 
-    n = 5
-    arr = [2, 3, 6, 6, 5]
-    max = arr[0]
 
-    for j in range(1, n):
-        if arr[j] >= max:
-            max, arr[j] = arr[j], max
-    arr.remove(max)
-
-    for i in arr:
-        if i==(len(arr)-1):
-            print(arr[i])
-maxV_array()
+    print(x[len(x)-2])

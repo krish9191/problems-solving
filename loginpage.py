@@ -19,8 +19,6 @@ class LoginUser:
             if i.user == self.u_name and i.pwd == self.u_pwd:
                 return f'login successful{i.user}'
 
-    def
-        '
 
 
 if __name__ == '__main__':
@@ -46,5 +44,6 @@ if __name__ == '__main__':
     elif x == 2:
         uname = input('enter your username:')
         upassword = input('enter your password:')
-
+        log1=LoginUser
+        log1.login_check('uname','upassword')
 

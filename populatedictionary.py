@@ -13,9 +13,13 @@ for i in range(3):
     keys, values = input().split()
     value=int(''.join(values))
     phonebook[keys]=value
-query_name=input('enter query name')
-list1=phonebook.keys()
-if query_name in list1:
-    print(f'{query_name}={phonebook[query_name]} ')
-else:
-    print('name is not available')
+while True:
+    try:
+        query_name=input()
+        list1=phonebook.keys()
+        if query_name in list1:
+            print(f'{query_name}={phonebook[query_name]} ')
+        else:
+            print('name is not available')
+    except:
+        break
