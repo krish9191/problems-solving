@@ -1,5 +1,5 @@
 def array_sort():
-    arr_1 = [45, 5,60, 85, 54,17,15 ]
+    arr_1 = [85, 5,21, 82, 54,17,15 ]
 
     for i in range(len(arr_1)):
         for j in range(1,len(arr_1)):
