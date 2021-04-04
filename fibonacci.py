@@ -1,14 +1,17 @@
-def fibonacci_recursive(n):
-    print("Calculating F", "(", n, ")", sep="", end=", ")
+def fibonacci(n):
 
-    # Base case
     if n == 0:
         return 0
-    elif n == 1:
-        return 1
+    a=0
+    b=1
+    for i in range(n):
+        c=a+b
+        a=b
+        b=c
 
-    # Recursive case
-    else:
-        return fibonacci_recursive(n-1) + fibonacci_recursive(n-2)
+    return c
+
+
 if __name__ =='__main__':
-    fibonacci_recursive(5)
+   x= fibonacci(6)
+   print(x)
