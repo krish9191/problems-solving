@@ -1,6 +1,5 @@
 def count_substring(string, sub_string):
     result = 0
-
     for i in range(len(string) - 1):
         x = i
         sub_string_result = ''
@@ -13,16 +12,7 @@ def count_substring(string, sub_string):
             x += 1
             if sub_string_result == sub_string:
                 result += 1
-
     return result
 
 
-print(count_substring('TestCaseTestCase', 'CaseT'))
-
-# if __name__ == '__main__':
-#     string = input().strip()
-#
-#     sub_string = input().strip()
-#
-#     count = count_substring(string, sub_string)
-#     print(count)
+print(count_substring('banana', 'an'))
