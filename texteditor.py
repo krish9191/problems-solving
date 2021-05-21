@@ -2,14 +2,9 @@ import os
 import keyboard
 
 
-
 def testfile():
-    test = open('testfile.txt', 'w+')
-    test.write('this is my first file\n')
-    test.close()
-
-
-
+    with open('testfile.txt', 'w+') as test:
+        test.write('this is my first file')
 
 
 if __name__ == '__main__':
@@ -18,24 +13,18 @@ if __name__ == '__main__':
     user_input = int(input('enter no for operation:'))
 
     if user_input == 1:
-        new_text = list()
-        new_text.append(input('enter new lines:'))
-        if keyboard.is_pressed('enter'):
+        filename = input("enter a filename to be edited:")
+        with open(f'{filename}.txt', 'a+') as operation:
+            new_text = input('write something in your file')
+            operation.write(f'{filename}\r\n{new_text}')
 
-
-        operation = open('testfile.txt', 'a')
-        operation.write(new_text[0])
-        print('your file has been successfully edited')
-
-
+            print('your file has been successfully edited')
 
     elif user_input == 2:
         file_name = input('enter a file_name:')
-        operation = open(f'{file_name}.txt', 'w')
-        new_text = list()
-        new_text.append(input('enter lines to be saved'))
-        operation.write(new_text[0])
-        print('your file has been successfully created')
+        with open(f'{file_name}.txt', 'a+') as operation:
+            operation.write(input('write something to the file:'))
+            print('your file has been successfully created')
 
     elif user_input == 3:
         file_name = input('enter a filename to delete:')
@@ -50,5 +39,5 @@ if __name__ == '__main__':
 
     elif user_input == 5:
         file_name = input('enter a file to open:')
-        operation = open(f'{file_name}.txt', 'r')
-        print(operation.read())
+        with open(f'{file_name}.txt', 'r') as operation:
+            print(operation.read())
