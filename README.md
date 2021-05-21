@@ -1,4 +1,4 @@
-1. avg_marks.py                                  populate a dictionary with name and subject marks and calculate the avg score of a queried student
+1. `avg_marks.py`                                  populate a dictionary with name and subject marks and calculate the avg score of a queried student
 2. binarycount1.py                               count the highest consecutive occurrence of 1’s in a binary number
 3.cap_first_char.py                             capitalize the first character of the word in a string    
 4.check_substring.py                            count the occurrence of a substring 
