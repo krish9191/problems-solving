@@ -1,37 +1,38 @@
 class Person:
-    def __init__(self, firstName, lastName, idNumber):
-        self.firstName = firstName
-        self.lastName = lastName
-        self.idNumber = idNumber
+    def __init__(self, firstname, lastname, person_id):
+        self.firstname = firstname
+        self.lastname = lastname
+        self.person_id = person_id
 
-    def printPerson(self):
-        print("Name:", self.lastName + ",", self.firstName)
-        print("ID:", self.idNumber)
+    def display_person(self):
+        print("Name:", self.lastname + " " + self.firstname)
+        print("ID:", self.person_id)
 
 
 class Student(Person):
-    def __init__(self,firstName,lastName,idNumber,scores):
-        super().__init__(firstName,lastName,idNumber)
-        self.scores=scores
+    def __init__(self, firstname, lastname, person_id, scores):
+        super().__init__(firstname, lastname, person_id)
+        self.scores = scores
 
-    def calculate(self):
-        a=sum(self.scores)/len(self.scores)
-        if a >=90 and a<=100:
+    def calculate_grade(self):
+        a = sum(self.scores) / len(self.scores)
+        if 90 <= a <= 100:
             return 'O'
-        elif a >=80 and a<90:
+        elif 80 <= a < 90:
             return 'E'
-        elif a >=70 and a<80:
+        elif 70 <= a < 80:
             return 'A'
-        elif a >55 and a<70:
+        elif 55 < a < 70:
             return 'P'
-        elif  a<40:
+        elif a < 40:
             return 'T'
 
+
 line = input().split()
-firstName = line[0]
-lastName = line[1]
-idNum = line[2]
-scores = list(map(int, input().split()))
-s = Student(firstName, lastName, idNum, scores)
-s.printPerson()
-print("Grade:", s.calculate())
+first_name = line[0]
+last_name = line[1]
+student_id = line[2]
+obtained_scores = list(map(int, input().split()))
+student = Student(first_name, last_name, student_id, obtained_scores)
+student.display_person()
+print("Grade:", student.calculate_grade())
