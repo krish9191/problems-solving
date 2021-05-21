@@ -1,15 +1,15 @@
-def swap_case(s):
+def swap_case(string):
     result = ''
-    for i in s:
-         if  i.isupper():
-            result = result + i.lower()
-         elif i.islower():
-            result = result + i.upper()
-         else:
-            result = result + i
+    for char in string:
+        if char.isupper():
+            result = result + char.lower()
+        elif char.islower():
+            result = result + char.upper()
+        else:
+            result = result + char
 
-    print(result)
-if __name__ == '__main__':
-    swap_case(input())
+    return result
 
 
+enter_string = 'adam JONES'
+print(swap_case(enter_string))
