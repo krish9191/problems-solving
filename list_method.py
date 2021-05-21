@@ -1,26 +1,26 @@
-if __name__ == '__main__':
-    N = int(input())
-    list_1 = []
+n = int(input('enter number of methods you used:'))
+work_list = [1, 3, 44, 85, 54]
 
+for i in range(n):
+    u_input, *args = input().split()
+    arg = list(map(int, args))
+    if u_input == 'insert' and len(arg) == 2:
+        work_list.insert(arg[0], arg[1])
 
-    for i in range(N):
-        a=input()
-        u_input, *ind = a.split()
-        arg = list(map(int, ind))
-        if u_input =='insert' and len(arg)==2:
-          list_1.insert(arg[0],arg[1])
+    elif u_input == 'append' and len(arg) == 1:
+        work_list.append(arg[0])
 
-        elif u_input == 'append' and len(arg)==1:
-            list_1.append(arg[0])
+    elif u_input == 'remove' and len(arg) == 1:
+        work_list.remove(arg[0])
+    elif u_input == 'print':
+        print(work_list)
+    elif u_input == 'sort':
 
-        elif u_input == 'remove' and len(arg)==1:
-            list_1.remove(arg[0])
-        elif u_input == 'print':
-            print(list_1)
-        elif u_input == 'sort':
-            list_1.sort()
-        elif u_input == 'pop':
-            list_1.pop()
-        elif u_input == 'reverse':
-            list_1.reverse()
+        work_list.sort()
 
+    elif u_input == 'pop' and len(arg) == 1:
+
+        work_list.pop(arg[0])
+    elif u_input == 'reverse':
+
+        work_list.reverse()
