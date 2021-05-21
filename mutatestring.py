@@ -1,14 +1,9 @@
 def mutate_string(string, position, character):
-    s1 =list(string)
+    string_1 = list(string)
+    string_1[position] = character
+    string_2 = ''.join(string_1)
+    return string_2
 
-    s1[position]=character
-    s2=''.join(s1)
-    return s2
 
-if __name__ == '__main__':
-    s = input()
-    i, c = input().split()
-
-    s_new = mutate_string(s, int(i), c)
-
-    print(s_new)
+new_string = mutate_string('banana', int(2), 'N')
+print(new_string)
