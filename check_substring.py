@@ -7,8 +7,3 @@ def count_substring(string, sub_string):
     return count_string
 
 
-if __name__ == '__main__':
-    enter_string = input("enter a string:")
-    enter_sub_string = input("enter a sub_string:")
-    count = count_substring(enter_string, enter_sub_string)
-    print(count)
